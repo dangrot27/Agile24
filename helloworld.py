@@ -1,8 +1,9 @@
 import sys
 
-# Check if a name is provided
-if len(sys.argv) != 2:
-    print("Usage: python script.py [name]")
+# Check if at least one name is provided
+if len(sys.argv) < 2:
+    print("Usage: python script.py [name1] [name2] ... [nameN]")
 else:
-    name = sys.argv[1]
-    print(f"Hello, {name}!")
+    # Loop through each name in the command-line arguments (excluding the script name)
+    for name in sys.argv[1:]:
+        print(f"Hello, {name}!")
